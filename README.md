@@ -2,6 +2,7 @@
 Homework Week 2
 ##Overview of Project
 ###The purpose and background are well defined 
+
 ##Results
 ###The analysis is well described with screenshots and code 
 ##Summary

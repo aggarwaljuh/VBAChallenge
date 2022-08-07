@@ -2,23 +2,23 @@
 Homework Week 2
 ## Overview of Project
 ### Purpose:
-The purpose of this project was to easily analyze an entire dataset and learn how to refactor previous VBA code to deal with a new senerio. In this senerio we are using VBA to look at a dozon stocks and determine the total volume and return percentage for each Stock. 
+The purpose of this project was to easily analyze an entire dataset and learn how to refactor previous VBA code to deal with a new scenario. In this scenario we are using VBA to look at a dozen stocks and determine the total volume and return percentage for each Stock. 
 
 ## Results
 I started this code with the code 'challenge_starter_code.vbs' given by the module and the 'green_stocks.xlsm' I used as going through the module. 
 ### Step 1:
 #### Step 1a: 
 
-Doing these two steps are used to difine the four variables we will be using in our for loops.
+Doing these two steps are used to define the four variables we will be using in our for loops.
 
-In this step I created the 'tickerIndex' variable (as a single) and initalized it at 0.
+In this step, I created the 'tickerIndex' variable (as a single) and initialized it at 0.
   ```
   Dim tickerIndex As Single
   tickerIndex = 0'
 ```
 
 #### Step 1b:
-In this step I created the three arrays: tickerVolumes (as long), tickerStartingPrices (as single), and tickerEndingPrices (as single). I also defined the arrays for being 12 items long.
+In this step, I created the three arrays: tickerVolumes (as long), tickerStartingPrices (as single), and tickerEndingPrices (as single). I also defined the arrays for being 12 items long.
 ```   
     Dim tickerVolumes(12) As Long
     Dim tickerStartingPrices(12) As Single
@@ -28,10 +28,10 @@ In this step I created the three arrays: tickerVolumes (as long), tickerStarting
 
 
 ### Step 2
-In this step we initialize all arrays to 0 and created 2 different for loops.
+In this step, we initialize all arrays to 0 and created 2 different for loops.
 
 #### Step 2a:
-In this step I created a for loop to initalize all arrays created above at 0 and to go through the array 12 times. 
+In this step, I created a for loop to initialize all arrays created above at 0 and to go through the array 12 times. 
 ```
  For i = 0 To 11
         tickerVolumes(i) = 0
@@ -41,22 +41,22 @@ In this step I created a for loop to initalize all arrays created above at 0 and
 ```
 
 #### Step 2b:
-In this stup I started a for loop for the rest of the spreadsheet. I am using this loop to define the rows. I started this loop at row 2 as this is the first row of data in the datasets. The last row is "rowcount" which is a varble counted above where the final number is the last row which has variables in the dataset. 
+In this step, I started a for loop for the rest of the spreadsheet. I am using this loop to define the rows. I started this loop at row 2 as this is the first row of data in the datasets. The last row is "rowcount" which is a variable counted above where the final number is the last row which has variables in the dataset. 
 ```    
     For j = 2 To RowCount
 ```
 
 ### Step 3
-In this step we are telling the for loop how we wish to calculate the data.
+In this step, we are telling the for loop how we wish to calculate the data.
 
 #### Step 3a:
-In this step we are increasing the ticker volume inside the previous "j" loop. this used the tickerIndex variable from step 1a to do so. 
+In this step, we are increasing the ticker volume inside the previous "j" loop. this used the tickerIndex variable from step 1a to do so. 
 
 ```
  tickerVolumes(tickerIndex) = tickerVolumes(tickerIndex) + Cells(j, 8).Value
 ```
 #### Step 3b: 
-In this step we are using an if-then statement to assign the tickerStartingPrices variable. We are still using tickerIndex as the array number. We are checking that the current row that we are in (j) is the first row that had the tickerIndex number that is currently the array number.
+In this step, we are using an if-then statement to assign the tickerStartingPrices variable. We are still using tickerIndex as the array number. We are checking that the current row that we are in (j) is the first row that had the tickerIndex number that is currently the array number.
 ```
  If Cells(j, 1).Value = tickers(tickerIndex) And Cells(j - 1, 1).Value <> tickers(tickerIndex) Then
         tickerStartingPrices(tickerIndex) = Cells(j, 6).Value
@@ -64,7 +64,7 @@ In this step we are using an if-then statement to assign the tickerStartingPrice
 ```
 
 #### Step 3c:
-In this step we are using a different if-then statement to assign the tickerEndingPrices variable. We are still using tickerIndex as the array number. We are checking that the current row that we are in (j) is the last row that had the tickerIndex number that is currently the array number.
+In this step, we are using a different if-then statement to assign the tickerEndingPrices variable. We are still using tickerIndex as the array number. We are checking that the current row that we are in (j) is the last row that had the tickerIndex number that is currently the array number.
 ```
  If Cells(j - 1, 2).Value <> tickers(tickerIndex) Then
         tickerEndingPrices(tickerIndex) = Cells(j, 6).Value
@@ -72,7 +72,7 @@ In this step we are using a different if-then statement to assign the tickerEndi
        End If
 ```
 #### Step 3d:
-In this last part of thsis for loop we are increasing the tickerIndex by checking that the tickerIndex of the cell we are in is the not the same as the tickerIndex. If this is true then the tickerIndex increases by 1. We are also going to end the for loop.
+In this last part of this for loop we are increasing the tickerIndex by checking that the tickerIndex of the cell we are in is not the same as the tickerIndex. If this is true then the tickerIndex increases by 1. We are also going to end the for loop.
 ```
  If Cells(j, 1).Value = tickers(tickerIndex) And Cells(j + 1, 1).Value <> tickers(tickerIndex) Then
             tickerIndex = tickerIndex + 1
@@ -81,9 +81,9 @@ In this last part of thsis for loop we are increasing the tickerIndex by checkin
 ```
 
 ### Step 4:
-In this last step we are going to creat another for loop to loop through all og the arrays and display the outputs in the Excel sheet. 
+In this last step, we are going to create another for loop to loop through all of the arrays and display the outputs in the Excel sheet. 
 
-The tickers will be displayed in coloumn 1 with the first value being displayed in row 4 hence the rows being calculated as (4+k). The tickerVolume will be displayed in coloumn 2, and the return (tickerEndingPrices(k)/tickerStartingPrices(k)-1)in cloumn 3.
+The tickers will be displayed in column 1 with the first value being displayed in row 4 hence the rows being calculated as (4+k). The tickerVolume will be displayed in coloumn 2, and the return (tickerEndingPrices(k)/tickerStartingPrices(k)-1)in cloumn 3.
 ```
   Worksheets("All Stocks Analysis").Activate
     For k = 0 To 11
@@ -101,7 +101,7 @@ The tickers will be displayed in coloumn 1 with the first value being displayed 
 
 ## Summary
 ### Advantages and disadvantages of refactoring code in general.
-The advantages to refactoring code in general is that it makes the code more effiecent and the time it takes VBA to run a script decreases significantly. A major disadvantage could be that when trying to refactor a code one may do it improperly and take a once usable (possibly clunky) code and make it unusable and untestable.
+The advantage to refactoring code, in general, is that it makes the code more efficient and the time it takes VBA to run a script decreases significantly. A major disadvantage could be that when trying to refactor a code one may do it improperly and take a once usable (possibly clunky) code and make it unusable and untestable.
 ### Advantages and disadvantages of the original and refactored VBA script.
 By refactoring this specific VBA code we were able to reduce the time taken to compile the code from over 1 second to less than a quarter of that time:
 2017 analysis before refactoring:
@@ -113,4 +113,4 @@ By refactoring this specific VBA code we were able to reduce the time taken to c
 2018 analysis after refactoring:
 ![VBA_Challange_2017Nonrefactored.png](Resources/VBA2018R.png)
 
-The con of accidently making a code unusable also happened while I was writing the code. At one point while rewritting the for loop in step 4 I accedently included the initialization in the worksheet in the for loop causing the first row "AY" to not show up (I accedently kept overwritting the data.)
+The con of accidentally making a code unusable also happened while I was writing the code. At one point while rewriting the for loop in step 4 I accidentally included the initialization in the worksheet in the for loop causing the first row "AY" to not show up (I accidentally kept overwriting the data.) Another disadvantage was that there was an issue when working on the reformatting that I accidentally messed up my database (removing a couple of rows of the 2017 database). This made it so the results for 2018 was what was expected but 2017 was wrong. When the original 2017 dataset was reuploaded it worked correctly.

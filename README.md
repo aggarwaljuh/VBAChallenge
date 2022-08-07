@@ -92,7 +92,7 @@ The tickers will be displayed in coloumn 1 with the first value being displayed 
         Cells(4 + k, 2).Value = tickerVolumes(k)
         Cells(4 + k, 3).Value = tickerEndingPrices(k) / tickerStartingPrices(k) - 1        
     Next k
-
+```
 
 ##After formatting the file the final outputs for 2017 and 2018 are below:
 

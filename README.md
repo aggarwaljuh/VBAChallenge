@@ -97,7 +97,10 @@ The tickers will be displayed in coloumn 1 with the first value being displayed 
 ##After formatting the file the final outputs for 2017 and 2018 are below:
 
 ![VBA_Challange_2017.png](Resources/VBA_Challenge_2017.png)
+![VBA_Challange_2018.png](Resources/VBA_Challenge_2018.png)
 
 ## Summary
-### There is a detailed statement on the advantages and disadvantages of refactoring code in general.
-### There is a detailed statement on the advantages and disadvantages of the original and refactored VBA script.
+### Advantages and disadvantages of refactoring code in general.
+The advantages to refactoring code in genderal is that it makes the code more effiecent and the time it takes VBA to run a script decreases significantly. A major disadvantage could be that when trying to refactor a code one may do it improperly and take a once usable (possibly clunky) code and make it unusable and untestable.
+### Advantages and disadvantages of the original and refactored VBA script.
+A great advantage is that refactoring this script is also ....

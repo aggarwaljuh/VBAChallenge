@@ -101,6 +101,16 @@ The tickers will be displayed in coloumn 1 with the first value being displayed 
 
 ## Summary
 ### Advantages and disadvantages of refactoring code in general.
-The advantages to refactoring code in genderal is that it makes the code more effiecent and the time it takes VBA to run a script decreases significantly. A major disadvantage could be that when trying to refactor a code one may do it improperly and take a once usable (possibly clunky) code and make it unusable and untestable.
+The advantages to refactoring code in general is that it makes the code more effiecent and the time it takes VBA to run a script decreases significantly. A major disadvantage could be that when trying to refactor a code one may do it improperly and take a once usable (possibly clunky) code and make it unusable and untestable.
 ### Advantages and disadvantages of the original and refactored VBA script.
-A great advantage is that refactoring this script is also ....
+By refactoring this specific VBA code we were able to reduce the time taken to compile the code from over 1 second to less than a quarter of that time:
+2017 analysis before refactoring:
+![VBA_Challange_2017Nonrefactored.png](Resources/VBA2017NR.png)
+2017 analysis after refactoring:
+![VBA_Challange_2017Nonrefactored.png](Resources/VBA2017R.png)
+2018 analysis before refactoring:
+![VBA_Challange_2017Nonrefactored.png](Resources/VBA2018NR.png)
+2018 analysis after refactoring:
+![VBA_Challange_2017Nonrefactored.png](Resources/VBA2018R.png)
+
+The con of accidently making a code unusable also happened while I was writing the code. At one point while rewritting the for loop in step 4 I accedently included the initialization in the worksheet in the for loop causing the first row "AY" to not show up (I accedently kept overwritting the data.)

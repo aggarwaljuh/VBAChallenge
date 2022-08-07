@@ -10,11 +10,11 @@ I started this code with the code 'challenge_starter_code.vbs' given by the modu
 #### Step 1a: 
 
 In this step I created the 'tickerIndex' variable (as a single) and initalized it at 0.
-  '''
+  ```
   1a) Create a ticker Index
   Dim tickerIndex As Single
   tickerIndex = 0'
-'''
+```
 
 #### Step 1b:
 In this step I created the three arrays: tickerVolumes (as long), tickerStartingPrices (as single), and tickerEndingPrices (as single).
